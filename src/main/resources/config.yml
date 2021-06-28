@@ -1,0 +1,11 @@
+use: false
+Item:
+  material: STONE
+  name: §a§lDeathAvoidance
+  lore:
+    - 事前に使用しておくことで
+    - 死を回避できるアイテム
+map:
+  name:
+
+  location:

@@ -1,0 +1,9 @@
+name: DeathAvoidance
+version: ${project.version}
+main: ubiquitaku.deathavoidance.DeathAvoidance
+api-version: 1.17
+commands:
+  deatha:
+permissions:
+  deatha.op:
+    default: op
