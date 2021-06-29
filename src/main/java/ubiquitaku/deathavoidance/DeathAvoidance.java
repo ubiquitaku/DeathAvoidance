@@ -155,10 +155,11 @@ public final class DeathAvoidance extends JavaPlugin {
         if (!map.containsKey(p.getName())) {
             return;
         }
-            String[] str = map.get(e.getEntity().getName()).split("/");
-            e.getEntity().teleport(new Location(Bukkit.getWorld(str[0]),Integer.parseInt(str[1]),Integer.parseInt(str[2]),Integer.parseInt(str[3])));
-            map.remove(e.getEntity().getName());
-            p.sendMessage(prefix+"致死ダメージを受けたためストックを消費して復活しました");
+        e.setCancelled(true);
+        String[] str = map.get(e.getEntity().getName()).split("/");
+        e.getEntity().teleport(new Location(Bukkit.getWorld(str[0]),Integer.parseInt(str[1]),Integer.parseInt(str[2]),Integer.parseInt(str[3])));
+        map.remove(e.getEntity().getName());
+        p.sendMessage(prefix+"致死ダメージを受けたためストックを消費して復活しました");
     }
 
 
@@ -173,6 +174,7 @@ public final class DeathAvoidance extends JavaPlugin {
         if (!e.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(config.getString("Item.name"))) {
             return;
         }
+        e.setCancelled(true);
         Location loc = e.getPlayer().getLocation();
         ItemStack stack = new ItemStack(Material.getMaterial(mate));
         ItemMeta meta = stack.getItemMeta();
