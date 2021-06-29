@@ -180,7 +180,7 @@ public final class DeathAvoidance extends JavaPlugin {
         meta.setLore(lor);
         stack.setItemMeta(meta);
         e.getPlayer().getInventory().remove(stack);
-        map.put(e.getPlayer().getName(),loc.getWorld().getName()+loc.getBlockX()+loc.getBlockY()+loc.getBlockZ());
+        map.put(e.getPlayer().getName(),loc.getWorld().getName()+"/"+loc.getBlockX()+"/"+loc.getBlockY()+"/"+loc.getBlockZ());
         e.getPlayer().sendMessage(prefix+"復活地点を登録しました");
     }
 
